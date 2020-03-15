@@ -4,7 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Menú de Opciones</title>
+<title>Crud java</title>
+<style>
+body, th, td {
+	font-family: arial;
+	padding: 10px;
+}
+</style>
 </head>
 <body>
 

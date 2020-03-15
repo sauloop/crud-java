@@ -5,10 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Editar Producto</title>
+<title>Editar producto</title>
+<style>
+body, th, td {
+	font-family: arial;
+	padding: 10px;
+}
+</style>
 </head>
 <body>
-	<h1>Editar Producto</h1>
+	<h1>Editar producto</h1>
 	<form action="productos" method="post">
 		<c:set var="producto" value="${producto}">
 		</c:set>
