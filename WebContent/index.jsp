@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1>Menu de Opciones Productos</h1>
+	<h1>Crud java</h1>
 
 	<table border="1">
 		<tr>
