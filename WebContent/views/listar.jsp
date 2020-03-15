@@ -16,9 +16,9 @@
 			<td>Nombre</td>
 			<td>Cantidad</td>
 			<td>Precio</td>
-			<td>Fecha Creacion</td>
-			<td>Fecha Actualizacion</td>
-			<td>Accion</td>
+			<td>Fecha Creación</td>
+			<td>Fecha Actualización</td>
+			<td>Operaciones</td>
 		</tr>
 		<c:forEach var="producto" items="${lista}">
 			<tr>
