@@ -29,7 +29,7 @@ public class ProductoDAO {
 			statement.setString(1, null);
 			statement.setString(2, producto.getNombre());
 			statement.setInt(3, producto.getCantidad());
-			statement.setInt(4, producto.getPrecio());
+			statement.setDouble(4, producto.getPrecio());
 			statement.setDate(5, producto.getFechaCrear());
 			statement.setDate(6, producto.getFechaActualizar());
 
@@ -62,7 +62,7 @@ public class ProductoDAO {
 
 			statement.setString(1, producto.getNombre());
 			statement.setInt(2, producto.getCantidad());
-			statement.setInt(3, producto.getPrecio());
+			statement.setDouble(3, producto.getPrecio());
 			statement.setDate(4, producto.getFechaActualizar());
 			statement.setInt(5, producto.getId());
 
@@ -130,7 +130,7 @@ public class ProductoDAO {
 				p.setId(resultSet.getInt(1));
 				p.setNombre(resultSet.getString(2));
 				p.setCantidad(resultSet.getInt(3));
-				p.setPrecio(resultSet.getInt(4));
+				p.setPrecio(resultSet.getDouble(4));
 				p.setFechaCrear(resultSet.getDate(5));
 				p.setFechaActualizar(resultSet.getDate(6));
 				listaProductos.add(p);
@@ -163,7 +163,7 @@ public class ProductoDAO {
 				p.setId(resultSet.getInt(1));
 				p.setNombre(resultSet.getString(2));
 				p.setCantidad(resultSet.getInt(3));
-				p.setPrecio(resultSet.getInt(4));
+				p.setPrecio(resultSet.getDouble(4));
 				p.setFechaCrear(resultSet.getDate(5));
 				p.setFechaActualizar(resultSet.getDate(6));
 			}

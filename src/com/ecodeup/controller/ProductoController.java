@@ -102,7 +102,7 @@ public class ProductoController extends HttpServlet {
 			Producto producto = new Producto();
 			producto.setNombre(request.getParameter("nombre"));
 			producto.setCantidad(Integer.parseInt(request.getParameter("cantidad")));
-			producto.setPrecio(Integer.parseInt(request.getParameter("precio")));
+			producto.setPrecio(Double.parseDouble(request.getParameter("precio")));
 			producto.setFechaCrear(new java.sql.Date(fechaActual.getTime()));
 
 			productoDAO.guardar(producto);
@@ -118,7 +118,7 @@ public class ProductoController extends HttpServlet {
 			producto.setId(Integer.parseInt(request.getParameter("id")));
 			producto.setNombre(request.getParameter("nombre"));
 			producto.setCantidad(Integer.parseInt(request.getParameter("cantidad")));
-			producto.setPrecio(Integer.parseInt(request.getParameter("precio")));
+			producto.setPrecio(Double.parseDouble(request.getParameter("precio")));
 			producto.setFechaActualizar(new java.sql.Date(fechaActual.getTime()));
 
 			productoDAO.editar(producto);

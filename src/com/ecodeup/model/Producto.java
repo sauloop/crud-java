@@ -6,11 +6,11 @@ public class Producto {
 	private int id;
 	private String nombre;
 	private int cantidad;
-	private int precio;
+	private double precio;
 	private Date fechaCrear;
 	private Date fechaActualizar;
 
-	public Producto(int id, String nombre, int cantidad, int precio, Date fechaCrear, Date fechaActualizar) {
+	public Producto(int id, String nombre, int cantidad, double precio, Date fechaCrear, Date fechaActualizar) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -48,11 +48,11 @@ public class Producto {
 		this.cantidad = cantidad;
 	}
 
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(int precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 
