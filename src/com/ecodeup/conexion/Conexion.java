@@ -31,18 +31,24 @@ public class Conexion {
 //		return getDataSource().getConnection();
 //	}
 
-	public static Connection getConnection() throws ClassNotFoundException, SQLException {
+	public static Connection getConnection() {
 
 		String url = "jdbc:mysql://localhost:3306/crud";
 		String user = "root";
 		String pass = "";
 
-		Connection con = null;
+		Connection conn = null;
 
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
 
-		con = DriverManager.getConnection(url, user, pass);
+			conn = DriverManager.getConnection(url, user, pass);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
-		return con;
+		return conn;
 	}
 }
