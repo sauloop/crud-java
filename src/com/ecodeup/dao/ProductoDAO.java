@@ -16,7 +16,7 @@ public class ProductoDAO {
 	private boolean estadoOperacion;
 
 	// guardar producto
-	public boolean guardar(Producto producto) throws SQLException, ClassNotFoundException {
+	public boolean guardar(Producto producto) {
 		String sql = null;
 		estadoOperacion = false;
 		connection = obtenerConexion();
@@ -39,7 +39,11 @@ public class ProductoDAO {
 			statement.close();
 			connection.close();
 		} catch (SQLException e) {
-			connection.rollback();
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 
@@ -47,7 +51,7 @@ public class ProductoDAO {
 	}
 
 	// editar producto
-	public boolean editar(Producto producto) throws SQLException, ClassNotFoundException {
+	public boolean editar(Producto producto) {
 		String sql = null;
 		estadoOperacion = false;
 		connection = obtenerConexion();
@@ -68,7 +72,11 @@ public class ProductoDAO {
 			connection.close();
 
 		} catch (SQLException e) {
-			connection.rollback();
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 
@@ -76,7 +84,7 @@ public class ProductoDAO {
 	}
 
 	// eliminar producto
-	public boolean eliminar(int idProducto) throws SQLException, ClassNotFoundException {
+	public boolean eliminar(int idProducto) {
 		String sql = null;
 		estadoOperacion = false;
 		connection = obtenerConexion();
@@ -92,7 +100,12 @@ public class ProductoDAO {
 			connection.close();
 
 		} catch (SQLException e) {
-			connection.rollback();
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 
@@ -100,7 +113,7 @@ public class ProductoDAO {
 	}
 
 	// obtener lista de productos
-	public List<Producto> obtenerProductos() throws SQLException, ClassNotFoundException {
+	public List<Producto> obtenerProductos() {
 		ResultSet resultSet = null;
 		List<Producto> listaProductos = new ArrayList<>();
 
@@ -131,7 +144,7 @@ public class ProductoDAO {
 	}
 
 	// obtener producto
-	public Producto obtenerProducto(int idProducto) throws SQLException, ClassNotFoundException {
+	public Producto obtenerProducto(int idProducto) {
 		ResultSet resultSet = null;
 		Producto p = new Producto();
 
@@ -163,7 +176,7 @@ public class ProductoDAO {
 	}
 
 	// obtener conexion pool
-	private Connection obtenerConexion() throws SQLException, ClassNotFoundException {
+	private Connection obtenerConexion() {
 		return Conexion.getConnection();
 	}
 

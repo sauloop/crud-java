@@ -1,7 +1,6 @@
 package com.ecodeup.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -49,25 +48,16 @@ public class ProductoController extends HttpServlet {
 
 			ProductoDAO productoDAO = new ProductoDAO();
 			List<Producto> lista = new ArrayList<>();
-			try {
-				try {
-					lista = productoDAO.obtenerProductos();
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				for (Producto producto : lista) {
-					System.out.println(producto);
-				}
 
-				request.setAttribute("lista", lista);
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/listar.jsp");
-				requestDispatcher.forward(request, response);
+			lista = productoDAO.obtenerProductos();
 
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			for (Producto producto : lista) {
+				System.out.println(producto);
 			}
+
+			request.setAttribute("lista", lista);
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/listar.jsp");
+			requestDispatcher.forward(request, response);
 
 			System.out.println("Usted a presionado la opcion listar");
 		} else if (opcion.equals("meditar")) {
@@ -75,40 +65,23 @@ public class ProductoController extends HttpServlet {
 			System.out.println("Editar id: " + id);
 			ProductoDAO productoDAO = new ProductoDAO();
 			Producto p = new Producto();
-			try {
-				try {
-					p = productoDAO.obtenerProducto(id);
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println(p);
-				request.setAttribute("producto", p);
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/editar.jsp");
-				requestDispatcher.forward(request, response);
 
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			p = productoDAO.obtenerProducto(id);
+
+			System.out.println(p);
+			request.setAttribute("producto", p);
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/editar.jsp");
+			requestDispatcher.forward(request, response);
 
 		} else if (opcion.equals("eliminar")) {
 			ProductoDAO productoDAO = new ProductoDAO();
 			int id = Integer.parseInt(request.getParameter("id"));
-			try {
-				try {
-					productoDAO.eliminar(id);
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println("Registro eliminado satisfactoriamente...");
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
-				requestDispatcher.forward(request, response);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+
+			productoDAO.eliminar(id);
+
+			System.out.println("Registro eliminado satisfactoriamente...");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+			requestDispatcher.forward(request, response);
 
 		}
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -131,21 +104,13 @@ public class ProductoController extends HttpServlet {
 			producto.setCantidad(Integer.parseInt(request.getParameter("cantidad")));
 			producto.setPrecio(Integer.parseInt(request.getParameter("precio")));
 			producto.setFechaCrear(new java.sql.Date(fechaActual.getTime()));
-			try {
-				try {
-					productoDAO.guardar(producto);
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println("Registro guardado satisfactoriamente...");
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
-				requestDispatcher.forward(request, response);
 
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			productoDAO.guardar(producto);
+
+			System.out.println("Registro guardado satisfactoriamente...");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+			requestDispatcher.forward(request, response);
+
 		} else if (opcion.equals("editar")) {
 			Producto producto = new Producto();
 			ProductoDAO productoDAO = new ProductoDAO();
@@ -155,20 +120,13 @@ public class ProductoController extends HttpServlet {
 			producto.setCantidad(Integer.parseInt(request.getParameter("cantidad")));
 			producto.setPrecio(Integer.parseInt(request.getParameter("precio")));
 			producto.setFechaActualizar(new java.sql.Date(fechaActual.getTime()));
-			try {
-				try {
-					productoDAO.editar(producto);
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println("Registro editado satisfactoriamente...");
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
-				requestDispatcher.forward(request, response);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+
+			productoDAO.editar(producto);
+
+			System.out.println("Registro editado satisfactoriamente...");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+			requestDispatcher.forward(request, response);
+
 		}
 
 		// doGet(request, response);
