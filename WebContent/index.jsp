@@ -9,21 +9,30 @@
 body, th, td {
 	font-family: arial;
 	padding: 10px;
+	text-align: center;
+}
+
+html, body {
+	width: 100%;
+}
+
+table {
+	margin: 0 auto;
 }
 </style>
 </head>
 <body>
+	<div>
+		<h1>Crud java</h1>
 
-	<h1>Crud java</h1>
-
-	<table border="1">
-		<tr>
-			<td><a href="productos?opcion=crear"> Crear un Producto</a></td>
-		</tr>
-		<tr>
-			<td><a href="productos?opcion=listar"> Listar Productos</a></td>
-		</tr>
-	</table>
-
+		<table border="1">
+			<tr>
+				<td><a href="productos?opcion=crear"> Crear un Producto</a></td>
+			</tr>
+			<tr>
+				<td><a href="productos?opcion=listar"> Listar Productos</a></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
