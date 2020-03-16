@@ -10,6 +10,7 @@
 body, th, td {
 	font-family: arial;
 	padding: 10px;
+	text-align: center;
 }
 </style>
 </head>
