@@ -27,10 +27,10 @@ table {
 
 		<table border="1">
 			<tr>
-				<td><a href="productos?opcion=crear"> Crear un Producto</a></td>
+				<td><a href="productos?opcion=crear">Nuevo producto</a></td>
 			</tr>
 			<tr>
-				<td><a href="productos?opcion=listar"> Listar Productos</a></td>
+				<td><a href="productos?opcion=listar">Lista productos</a></td>
 			</tr>
 		</table>
 	</div>
