@@ -35,15 +35,15 @@ public class Conexion {
 
 		// Dev
 
-//		String url = "jdbc:mysql://localhost:3306/crud";
-//		String user = "root";
-//		String pass = "";
+		String url = "jdbc:mysql://localhost:3306/crud";
+		String user = "root";
+		String pass = "";
 
 		// Prod
 
-		String url = "jdbc:mysql://r42ii9gualwp7i1y.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/lmupva5bdjr1mdw9";
-		String user = "wbbd4ix2tkuhv33q";
-		String pass = "syz56f5pn4im9fe1";
+//		String url = "jdbc:mysql://r42ii9gualwp7i1y.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/lmupva5bdjr1mdw9";
+//		String user = "wbbd4ix2tkuhv33q";
+//		String pass = "syz56f5pn4im9fe1";
 
 		Connection conn = null;
 
